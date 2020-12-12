@@ -11,21 +11,21 @@ The task is to amend the code and test that it returns "Fri" for all 4 of the te
 
 The existing code and test cases (4th case is failing) is:
 
-CHROME
-showDayName = (apiDate) => {
-... const utcDate = new Date(apiDate);
-... const localDateString = String(new Date(utcDate));
-... const day = localDateString.substring(0,3);
-... return day;
-... }
-[Function: showDayName]
-> showDayName('2020-12-25T02:00:00');
-'Fri' //  <-- Works!
-> showDayName('2020-12-25T23:00:00');
-'Fri'  <-- Works!
+    CHROME
+    showDayName = (apiDate) => {
+    const utcDate = new Date(apiDate);
+    const localDateString = String(new Date(utcDate));
+    const day = localDateString.substring(0,3);
+    return day;
+    }
+    [Function: showDayName]
+    > showDayName('2020-12-25T02:00:00');
+    'Fri' //  <-- Works!
+    > showDayName('2020-12-25T23:00:00');
+    'Fri'  <-- Works!
 
-SAFARI
-> showDayName('2020-12-25T02:00:00');
-'Fri'  <-- Works!
-> showDayName('2020-12-25T23:00:00');
-'Thu'  <-- issue :(
+    SAFARI
+    > showDayName('2020-12-25T02:00:00');
+    'Fri'  <-- Works!
+    > showDayName('2020-12-25T23:00:00');
+    'Thu'  <-- issue :(

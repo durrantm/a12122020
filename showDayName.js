@@ -1,6 +1,10 @@
-showDayName = (apiDate) => {
+const showDayName = (apiDate) => {
   const utcDate = new Date(apiDate);
-  const localDateString = String(new Date(utcDate));
+  const options = {
+    weekday: 'long',
+    timeZone: 'UTC'
+  };
+  const localDateString = new Intl.DateTimeFormat('en-US', options).format(utcDate);
   const day = localDateString.substring(0,3);
   return day;
 };
